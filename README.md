@@ -26,8 +26,7 @@ We had an issue with a lot of other Raspberry Pi based kiosks as they tended to 
 4. Install git and this repo...
    ```
    sudo apt install git
-   
-
+   git clone https://github.com/dogsbodytech/raspbian-jessie-epiphany-kiosk.git /home/pi/raspbian-jessie-epiphany-kiosk
    ```
 
 
