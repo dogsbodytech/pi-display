@@ -4,16 +4,13 @@ We had an issue with a lot of other Raspberry Pi based displays/kiosks as they t
 
 ## Installation ##
 
-1. Install the latest Raspbian Debian Jessie Lite
+1. Install the latest Raspbian Debian Jessie Lite (Last tested with 2016-09-23-raspbian-jessie-lite.zip)
 
-   `wget https://downloads.raspberrypi.org/raspbian_lite_latest`
-
-   (Last tested with 2016-09-23-raspbian-jessie-lite.zip)
+   You can always grab the latest from  `https://downloads.raspberrypi.org/raspbian_lite_latest`
 
 2. Login to the Raspberry Pi (SSH as pi user) and update everything...
-   ```
-   sudo apt update && sudo apt -y dist-upgrade
-   ```
+
+   `sudo apt update && sudo apt -y dist-upgrade`
 
 3. Run `sudo raspi-config` and...
    - Expand Filesystem
@@ -29,10 +26,11 @@ We had an issue with a lot of other Raspberry Pi based displays/kiosks as they t
    sudo apt install git
    git clone https://github.com/dogsbodytech/raspbian-jessie-epiphany-display.git /home/pi/raspbian-jessie-epiphany-display
    ```
-5. Run the setup script
-
-   `sudo bash /home/pi/raspbian-jessie-epiphany-display/install.sh`
-
+5. Run the setup script and reboot!
+   ```
+   sudo bash /home/pi/raspbian-jessie-epiphany-display/install.sh
+   sudo reboot
+   ```
 
 ## Sources ##
 - http://blogs.wcode.org/2013/09/howto-boot-your-raspberry-pi-into-a-fullscreen-browser-kiosk/
