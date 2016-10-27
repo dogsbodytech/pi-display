@@ -12,8 +12,7 @@ We had an issue with a lot of other Raspberry Pi based displays/kiosks as they t
 
 2. Login to the Raspberry Pi (SSH as pi user) and update everything...
    ```
-   sudo apt update
-   sudo apt dist-upgrade
+   sudo apt update && sudo apt -y dist-upgrade
    ```
 
 3. Run `sudo raspi-config` and...
