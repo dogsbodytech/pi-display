@@ -16,8 +16,7 @@ We had an issue with a lot of other Raspberry Pi based displays/kiosks as they t
    - Expand Filesystem
    - Change User Password
    - Internationalisation Options - Change Timezone - Europe - London
-   - Advanced Options - Overscan - Off
-   - Advanced Options - Hotname - displayboard
+   - Advanced Options - Hostname - displayboard
    - Advanced Options - Memory Split - 256
    - Finish - No Reboot
 
