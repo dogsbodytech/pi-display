@@ -14,7 +14,7 @@ fi
 raspi-config nonint do_overscan 1
 
 # Install the bits we need
-apt install -y matchbox epiphany-browser xwit xinit ttf-mscorefonts-installer
+apt install -y matchbox epiphany-browser xwit xinit ttf-mscorefonts-installer unattended-upgrades
 
 # Setup rc.local
 cp /home/pi/raspbian-jessie-epiphany-display/rc.local /etc/rc.local
@@ -31,12 +31,14 @@ echo x11-common x11-common/xwrapper/actual_allowed_users string anybody | debcon
 # echo "standby 0" | /usr/local/bin/cec-client -s
 apt install -y cmake libudev-dev libxrandr-dev python-dev swig
 
+if [ -d /home/pi/cec-platform ];then rm -rf /home/pi/cec-platform; fi
 sudo -u pi git clone https://github.com/Pulse-Eight/platform.git /home/pi/cec-platform
 cd /home/pi/cec-platform
 sudo -u pi cmake .
 sudo -u pi make
 make install
 
+if [ -d /home/pi/libcec ];then rm -rf /home/pi/libcec; fi
 sudo -u pi git clone https://github.com/Pulse-Eight/libcec.git /home/pi/libcec
 cd /home/pi/libcec
 sudo -u pi cmake -DRPI_INCLUDE_DIR=/opt/vc/include -DRPI_LIB_DIR=/opt/vc/lib .
