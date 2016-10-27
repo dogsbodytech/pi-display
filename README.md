@@ -21,7 +21,7 @@ We had an issue with a lot of other Raspberry Pi based displays/kiosks as they t
 
 4. Install git and this repo...
    ```
-   sudo apt install git
+   sudo apt -y install git
    git clone https://github.com/dogsbodytech/raspbian-jessie-epiphany-display.git /home/pi/raspbian-jessie-epiphany-display
    ```
 5. Run the setup script and reboot!
