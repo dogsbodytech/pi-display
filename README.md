@@ -13,7 +13,6 @@ We had an issue with a lot of other Raspberry Pi based displays/kiosks as they t
    `sudo apt update && sudo apt -y dist-upgrade`
 
 3. Run `sudo raspi-config` and...
-   - Expand Filesystem
    - Change User Password
    - Internationalisation Options - Change Timezone - Europe - London
    - Advanced Options - Hostname - displayboard
