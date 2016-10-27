@@ -3,20 +3,17 @@
 while true; do
 
   # Clean up previously running apps, gracefully at first then harshly
-  killall -TERM chromium 2>/dev/null;
-  killall -TERM matchbox-window-manager 2>/dev/null;
-  sleep 2;
-  killall -9 chromium 2>/dev/null;
-  killall -9 matchbox-window-manager 2>/dev/null;
+  killall -TERM chromium 2>/dev/null
+  killall -TERM matchbox-window-manager 2>/dev/null
+  sleep 2
+  killall -9 chromium 2>/dev/null
+  killall -9 matchbox-window-manager 2>/dev/null
 
   # Clean out existing profile information
-  rm -rf /home/pi/.cache;
-  rm -rf /home/pi/.config;
-  rm -rf /home/pi/.pki;
-
-  # Generate the bare minimum to keep Chromium happy!
-  mkdir -p /home/pi/.config/chromium/Default
-  sqlite3 /home/pi/.config/chromium/Default/Web\ Data "CREATE TABLE meta(key LONGVARCHAR NOT NULL UNIQUE PRIMARY KEY, value LONGVARCHAR); INSERT INTO meta VALUES('version','46'); CREATE TABLE keywords (foo INTEGER);";
+  rm -rf /home/pi/.cache
+  rm -rf /home/pi/.config
+  rm -rf /home/pi/.pki
+  mkdir /home/pi/.config
 
   # Disable DPMS / Screen blanking
   xset -dpms
@@ -28,7 +25,8 @@ while true; do
   ## Start the window manager (remove "-use_cursor no" if you actually want mouse interaction)
   matchbox-window-manager -use_titlebar no -use_cursor no &
 
-  # Start the browser (See http://peter.sh/experiments/chromium-command-line-switches/)
-  chromium --app=https://warboard.dogsbodytechnology.com/
+  # Start the browser
+  URL="https://www.dogsbodytechnology.com/" # In case the settings file doesn't exist
+  test -f /home/pi/raspbian-jessie-epiphany-kiosk/settings.data && source /home/pi/raspbian-jessie-epiphany-kiosk/settings.data
+  epiphany-browser -a --profile /home/pi/.config "${URL}"
 done;
-
