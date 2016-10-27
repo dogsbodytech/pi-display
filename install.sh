@@ -10,6 +10,9 @@ then
     exit 1
 fi
 
+# Disable Overscan
+raspi-config nonint do_overscan 1
+
 # Install the bits we need
 apt install -y matchbox epiphany-browser xwit xinit ttf-mscorefonts-installer
 
