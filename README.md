@@ -172,6 +172,8 @@ network={
 	```
 
 ## Sources ##
-
+- http://blogs.wcode.org/2013/09/howto-boot-your-raspberry-pi-into-a-fullscreen-browser-kiosk/
+- https://www.danpurdy.co.uk/web-development/raspberry-pi-kiosk-screen-tutorial/
+- https://drgeoffathome.wordpress.com/2014/08/08/cec-adventures-on-the-raspberry-pi/
 - https://github.com/elalemanyo/raspberry-pi-kiosk-screen
 
