@@ -46,6 +46,9 @@ This install also downloads and compiles the latest cec-client that allows you t
 
    `sudo cp /home/pi/raspbian-jessie-epiphany-display/cron.example /etc/cron.d/display.cron`
 
+## ToDo ##
+- It would be great if we could get all the `raspi-config` commands into the `install.sh` script as then the installation could be one hit :-)
+
 ## Sources ##
 - http://blogs.wcode.org/2013/09/howto-boot-your-raspberry-pi-into-a-fullscreen-browser-kiosk/
 - https://www.danpurdy.co.uk/web-development/raspberry-pi-kiosk-screen-tutorial/
