@@ -14,7 +14,7 @@ fi
 raspi-config nonint do_overscan 1
 
 # Install the bits we need
-apt install -y matchbox epiphany-browser xwit xinit ttf-mscorefonts-installer unattended-upgrades vim
+apt install -y matchbox x11-xserver-utils epiphany-browser xwit xinit ttf-mscorefonts-installer unattended-upgrades vim
 
 # Setup rc.local
 cp /home/pi/raspbian-jessie-epiphany-display/rc.local /etc/rc.local
