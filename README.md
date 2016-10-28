@@ -44,7 +44,7 @@ This install also downloads and compiles the latest cec-client that allows you t
 
 - Setup cron job to turn the TV on and off each day. There us an example in the cron.example file.
 
-   `sudo cp /home/pi/raspbian-jessie-epiphany-display/cron.example /etc/cron.d/display.cron`
+   `sudo cp /home/pi/raspbian-jessie-epiphany-display/cron.example /etc/cron.d/displayboard`
 
 ## ToDo ##
 - It would be great if we could get all the `raspi-config` commands into the `install.sh` script as then the installation could be one hit :-)
