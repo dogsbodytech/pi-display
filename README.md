@@ -1,6 +1,8 @@
 # Create a Raspberry Pi Display on Raspbian Debian using Jessie and the Epiphany browser
 
-We had an issue with a lot of other Raspberry Pi based displays/kiosks as they tended to use the Chromium browser which is very old on arm and doesn't currently support the latest SSL protocols.  
+We had an issue with a lot of other Raspberry Pi based displays/kiosks as they tended to use the Chromium browser which is very old on arm and doesn't currently support the latest SSL protocols.
+
+This install also downloads and compiles the latest cec-client that allows you to cron turning the TV on and off each day.
 
 ## Installation ##
 
@@ -39,6 +41,10 @@ We had an issue with a lot of other Raspberry Pi based displays/kiosks as they t
 - To reload the URL or restart the displayboard due to a crash just kill epiphany
 
    `killall -TERM  epiphany-browser`
+
+- Setup cron job to turn the TV on and off each day. There us an example in the cron.example file.
+
+   `sudo cp /home/pi/raspbian-jessie-epiphany-display/cron.example /etc/cron.d/display.cron`
 
 ## Sources ##
 - http://blogs.wcode.org/2013/09/howto-boot-your-raspberry-pi-into-a-fullscreen-browser-kiosk/
