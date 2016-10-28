@@ -33,9 +33,11 @@ We had an issue with a lot of other Raspberry Pi based displays/kiosks as they t
 
 ## Usage ##
 - Set the URL for the display by adding it to a settings.data file...
+
    `echo "URL=https://www.dogsbodytechnology.com/" > /home/pi/raspbian-jessie-epiphany-display/settings.data`
 
 - To reload the URL or restart the displayboard due to a crash just kill epiphany
+
    `killall -TERM  epiphany-browser`
 
 ## Sources ##
