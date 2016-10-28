@@ -44,14 +44,3 @@ sudo -u pi cmake -DRPI_INCLUDE_DIR=/opt/vc/include -DRPI_LIB_DIR=/opt/vc/lib .
 sudo -u pi make -j4
 make install
 ldconfig
-
-
-#sudo apt-get install  x11-xserver-utils xautomation unclutter
-#sudo apt-get install -y sqlite3 vim at
-#sudo update-alternatives --config editor
-#sudo ln -s /usr/lib/arm-linux-gnueabihf/nss/ /usr/lib/nss
-
-
-#crontab -e 
-#  00 08 * * 1-5 echo "on 0" | /usr/local/bin/cec-client -s > /dev/null
-#  00 18 * * 1-5 echo "standby 0" | /usr/local/bin/cec-client -s > /dev/null
