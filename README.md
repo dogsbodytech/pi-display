@@ -31,6 +31,13 @@ We had an issue with a lot of other Raspberry Pi based displays/kiosks as they t
    sudo reboot
    ```
 
+## Usage ##
+- Set the URL for the display by adding it to a settings.data file...
+   `echo "URL=https://www.dogsbodytechnology.com/" > /home/pi/raspbian-jessie-epiphany-display/settings.data`
+
+- To reload the URL or restart the displayboard due to a crash just kill epiphany
+   `killall -TERM  epiphany-browser`
+
 ## Sources ##
 - http://blogs.wcode.org/2013/09/howto-boot-your-raspberry-pi-into-a-fullscreen-browser-kiosk/
 - https://www.danpurdy.co.uk/web-development/raspberry-pi-kiosk-screen-tutorial/
