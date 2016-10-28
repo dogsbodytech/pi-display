@@ -23,8 +23,7 @@ cp /home/pi/raspbian-jessie-epiphany-display/rc.local /etc/rc.local
 sudo -u pi cp /home/pi/raspbian-jessie-epiphany-display/xinitrc /home/pi/.xinitrc
 
 # Allow anyone to start an Xserver
-echo x11-common x11-common/xwrapper/allowed_users select Anybody | debconf-set-selections -v
-echo x11-common x11-common/xwrapper/actual_allowed_users string anybody | debconf-set-selections -v
+sed -i 's/allowed_users=.*/allowed_users=anybody/' /etc/X11/Xwrapper.config
 
 # Download and copile the latest cec-client so we can turn the TV on and off via cron
 # echo "on 0" | /usr/local/bin/cec-client -s
