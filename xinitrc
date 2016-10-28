@@ -3,10 +3,10 @@
 while true; do
 
   # Clean up previously running apps, gracefully at first then harshly
-  killall -TERM chromium 2>/dev/null
+  killall -TERM epiphany-browser 2>/dev/null
   killall -TERM matchbox-window-manager 2>/dev/null
   sleep 2
-  killall -9 chromium 2>/dev/null
+  killall -9 epiphany-browser 2>/dev/null
   killall -9 matchbox-window-manager 2>/dev/null
 
   # Clean out existing profile information
