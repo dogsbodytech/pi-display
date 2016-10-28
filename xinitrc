@@ -18,7 +18,8 @@ while true; do
   # Disable DPMS / Screen blanking
   xset -dpms
   xset s off
-
+  xset s noblank
+  
   # Hide the cursor (move it to the bottom-right, comment out if you want mouse interaction)
   xwit -root -warp $( cat /sys/module/*fb*/parameters/fbwidth ) $( cat /sys/module/*fb*/parameters/fbheight )
 
