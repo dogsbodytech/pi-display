@@ -2,13 +2,13 @@
 
 We had an issue with a lot of other Raspberry Pi based displays/kiosks as they tended to use the Chromium browser which is very old on arm and doesn't currently support the latest SSL protocols.
 
-This install also downloads and compiles the latest cec-client that allows you to cron turning the TV on and off each day.
+This install also downloads and compiles the latest cec-client that allows you to cron turning the TV on and off each day via cron.
 
 ## Installation ##
 
 1. Install the latest Raspbian Debian Jessie Lite (Last tested with 2016-09-23-raspbian-jessie-lite.zip)
 
-   You can always grab the latest from  `https://downloads.raspberrypi.org/raspbian_lite_latest`
+   You can always grab the latest from  https://downloads.raspberrypi.org/raspbian_lite_latest
 
 2. Login to the Raspberry Pi (SSH as pi user) and update everything...
 
