@@ -1,4 +1,4 @@
 # This will turn the TV on at 8am and off at 6pm.
-# Note that these times are system/UTC times not 
+# Note that these times are system/UTC times not userland times
 00 08 * * 1-5 pi echo "on 0" | /usr/local/bin/cec-client -s > /dev/null
 00 18 * * 1-5 pi echo "standby 0" | /usr/local/bin/cec-client -s > /dev/null
