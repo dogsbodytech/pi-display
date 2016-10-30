@@ -1,8 +1,10 @@
-# Create a Raspberry Pi Display on Raspbian Debian using Jessie and the Epiphany browser
+# Create a Raspberry Pi Display on Raspbian Debian using Jessie and the Chromium browser
 
-We had an issue with a lot of other Raspberry Pi based displays/kiosks as they tended to use the Chromium browser which is very old on arm and doesn't currently support the latest SSL protocols.
+We use this for [our office Warboard](https://github.com/dogsbodytech/warboard) which is not only locked down to certain IP addresses but also uses the latest SSl protocols and ciphers.  The stock chromium on Raspberry Pi wasn't up to date (v22 when the current version is v51) and didn't support the latest security protocols.
 
-This install also downloads and compiles the latest cec-client that allows you to cron turning the TV on and off each day via cron.
+This repo used to use the epiphany browser instead which was more up to date (nut not as stable).  Now (28 Sep 2016) the Raspberry Pi team have [released PIXEL](https://www.raspberrypi.org/blog/introducing-pixel/) which includes a *much* more up to date version of the Chromium browser
+
+This install also downloads and compiles the latest cec-client that allows you to turn the TV on and off each day via cron.
 
 ## Installation ##
 
@@ -38,9 +40,9 @@ This install also downloads and compiles the latest cec-client that allows you t
 
    `echo "URL=https://www.dogsbodytechnology.com/" > /home/pi/pi-display/settings.data`
 
-- To reload the URL or restart the displayboard due to a crash just kill epiphany
+- To reload the URL or restart the displayboard due to a crash just kill Chromium
 
-   `killall -TERM  epiphany-browser`
+   `killall -TERM  chromium-browser`
 
 - Setup cron job to turn the TV on and off each day. There us an example in the cron.example file.
 
