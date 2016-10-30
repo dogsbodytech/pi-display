@@ -1,6 +1,6 @@
 # Create a Raspberry Pi Display on Raspbian Debian using Jessie and the Chromium browser
 
-We use this for [our office Warboard](https://github.com/dogsbodytech/warboard) which is not only locked down to certain IP addresses but also uses the latest SSl protocols and ciphers.  The stock chromium on Raspberry Pi wasn't up to date (v22 when the current version is v51) and didn't support the latest security protocols.
+We use this for [our office Warboard](https://github.com/dogsbodytech/warboard) which is not only locked down to certain IP addresses but also uses the latest SSL protocols and ciphers.  The stock chromium on Raspberry Pi wasn't up to date (v22 when the current version is v51) and didn't support the latest security protocols.
 
 This repo used to use the epiphany browser instead which was more up to date (nut not as stable).  Now (28 Sep 2016) the Raspberry Pi team have [released PIXEL](https://www.raspberrypi.org/blog/introducing-pixel/) which includes a *much* more up to date version of the Chromium browser
 
