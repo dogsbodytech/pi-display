@@ -17,10 +17,10 @@ raspi-config nonint do_overscan 1
 apt install -y matchbox x11-xserver-utils epiphany-browser xwit xinit ttf-mscorefonts-installer unattended-upgrades vim
 
 # Setup rc.local
-cp /home/pi/raspbian-jessie-epiphany-display/rc.local /etc/rc.local
+cp /home/pi/pi-display/rc.local /etc/rc.local
 
 # Setup .xinitrc
-sudo -u pi cp /home/pi/raspbian-jessie-epiphany-display/xinitrc /home/pi/.xinitrc
+sudo -u pi cp /home/pi/pi-display/xinitrc /home/pi/.xinitrc
 
 # Allow anyone to start an Xserver
 sed -i 's/allowed_users=.*/allowed_users=anybody/' /etc/X11/Xwrapper.config
