@@ -28,6 +28,6 @@ while true; do
 
   # Start the browser
   URL="https://www.dogsbodytechnology.com/" # In case the settings file doesn't exist
-  test -f /home/pi/raspbian-jessie-epiphany-display/settings.data && . /home/pi/raspbian-jessie-epiphany-display/settings.data
+  test -f /home/pi/pi-display/settings.data && . /home/pi/pi-display/settings.data
   epiphany-browser -a --profile /home/pi/.config "${URL}"
 done;
