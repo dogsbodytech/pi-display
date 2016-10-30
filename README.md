@@ -24,19 +24,19 @@ This install also downloads and compiles the latest cec-client that allows you t
 4. Install git and this repo...
    ```
    sudo apt -y install git
-   git clone https://github.com/dogsbodytech/raspbian-jessie-epiphany-display.git /home/pi/raspbian-jessie-epiphany-display
+   git clone https://github.com/dogsbodytech/pi-display.git /home/pi/pi-display
    ```
 5. Run the setup script and reboot!
 
    ```
-   sudo bash /home/pi/raspbian-jessie-epiphany-display/install.sh
+   sudo bash /home/pi/pi-display/install.sh
    sudo reboot
    ```
 
 ## Usage ##
 - Set the URL for the display by adding it to a settings.data file...
 
-   `echo "URL=https://www.dogsbodytechnology.com/" > /home/pi/raspbian-jessie-epiphany-display/settings.data`
+   `echo "URL=https://www.dogsbodytechnology.com/" > /home/pi/pi-display/settings.data`
 
 - To reload the URL or restart the displayboard due to a crash just kill epiphany
 
@@ -44,7 +44,7 @@ This install also downloads and compiles the latest cec-client that allows you t
 
 - Setup cron job to turn the TV on and off each day. There us an example in the cron.example file.
 
-   `sudo cp /home/pi/raspbian-jessie-epiphany-display/cron.example /etc/cron.d/displayboard`
+   `sudo cp /home/pi/pi-display/cron.example /etc/cron.d/displayboard`
 
 ## ToDo ##
 - It would be great if we could get all the `raspi-config` commands into the `install.sh` script as then the installation could be one hit :-)
