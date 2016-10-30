@@ -3,10 +3,10 @@
 while true; do
 
   # Clean up previously running apps, gracefully at first then harshly
-  killall -TERM epiphany-browser 2>/dev/null
+  killall -TERM chromium-browser 2>/dev/null
   killall -TERM matchbox-window-manager 2>/dev/null
   sleep 2
-  killall -9 epiphany-browser 2>/dev/null
+  killall -9 chromium-browser 2>/dev/null
   killall -9 matchbox-window-manager 2>/dev/null
 
   # Clean out existing profile information
@@ -29,5 +29,5 @@ while true; do
   # Start the browser
   URL="https://www.dogsbodytechnology.com/" # In case the settings file doesn't exist
   test -f /home/pi/pi-display/settings.data && . /home/pi/pi-display/settings.data
-  epiphany-browser -a --profile /home/pi/.config "${URL}"
+  chromium-browser -app="${URL}"
 done;
