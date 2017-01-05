@@ -11,6 +11,7 @@ This install also downloads and compiles the latest cec-client that allows you t
 1. Install the latest Raspbian Debian Jessie Lite (Last tested with 2016-11-25-raspbian-jessie-lite.zip)
 
    You can always grab the latest from  https://downloads.raspberrypi.org/raspbian_lite_latest
+
    touch /boot/ssh to enable SSH before putting the card in the Pi.
 
 2. Login to the Raspberry Pi (SSH as pi user) and update everything...
