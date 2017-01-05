@@ -36,6 +36,9 @@ printf "===> Resetting frame-buffer to %dx%dx%d...\n" $_XRES $_YRES $_DEPTH
 fbset --all --geometry $_XRES $_YRES $_XRES $_YRES $_DEPTH -left 0 -right 0 -upper 0 -lower 0;
 sleep 1;
 
+# Workaround for https://bugs.launchpad.net/ubuntu/+source/xinit/+bug/1562219
+chmod 0666 /dev/tty*
+
 #Start Xserver
 if [ -f /home/pi/.xinitrc ]; then
   su - pi -c 'startx' &
