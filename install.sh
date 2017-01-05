@@ -25,6 +25,12 @@ sudo -u pi cp /home/pi/pi-display/xinitrc /home/pi/.xinitrc
 # Allow anyone to start an Xserver
 sed -i 's/allowed_users=.*/allowed_users=anybody/' /etc/X11/Xwrapper.config
 
+# Enable Automatic upgrades to keep the box secure
+sed -i 's/.*Unattended-Upgrade::Automatic-Reboot .*/Unattended-Upgrade::Automatic-Reboot "true";/g' /etc/apt/apt.conf.d/50unattended-upgrades 
+sed -i 's/.*Unattended-Upgrade::Automatic-Reboot-Time .*/Unattended-Upgrade::Automatic-Reboot-Time "02:00";/g' /etc/apt/apt.conf.d/50unattended-upgrades 
+sed -i 's/.*Unattended-Upgrade::Remove-Unused-Dependencies .*/Unattended-Upgrade::Remove-Unused-Dependencies "true";/g' /etc/apt/apt.conf.d/50unattended-upgrades 
+cp /home/pi/pi-display/20auto-upgrades /etc/apt/apt.conf.d/20auto-upgrades
+
 # Download and copile the latest cec-client so we can turn the TV on and off via cron
 # echo "on 0" | /usr/local/bin/cec-client -s
 # echo "standby 0" | /usr/local/bin/cec-client -s
