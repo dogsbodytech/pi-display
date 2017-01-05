@@ -1,6 +1,6 @@
 # Create a Raspberry Pi Display on Raspbian Debian using Jessie and the Chromium browser
 
-We use this for [our office Warboard](https://github.com/dogsbodytech/warboard) which is not only locked down to certain IP addresses but also uses the latest SSL protocols and ciphers.  The stock chromium on Raspberry Pi wasn't up to date (v22 when the current version is v51) and didn't support the latest security protocols.
+We use this for [our office Warboard](https://www.dogsbodytechnology.com/blog/the-warboard/) which is not only locked down to certain IP addresses but also uses the latest SSL protocols and ciphers.  The stock chromium on Raspberry Pi wasn't up to date (v22 when the current version is v51) and didn't support the latest security protocols.
 
 This repo used to use the epiphany browser instead which was more up to date (but not as stable).  Now (28 Sep 2016) the Raspberry Pi team have [released PIXEL](https://www.raspberrypi.org/blog/introducing-pixel/) which includes a *much* more up to date version of the Chromium browser
 
@@ -8,9 +8,10 @@ This install also downloads and compiles the latest cec-client that allows you t
 
 ## Installation ##
 
-1. Install the latest Raspbian Debian Jessie Lite (Last tested with 2016-09-23-raspbian-jessie-lite.zip)
+1. Install the latest Raspbian Debian Jessie Lite (Last tested with 2016-11-25-raspbian-jessie-lite.zip)
 
    You can always grab the latest from  https://downloads.raspberrypi.org/raspbian_lite_latest
+   touch /boot/ssh to enable SSH before putting the card in the Pi.
 
 2. Login to the Raspberry Pi (SSH as pi user) and update everything...
 
