@@ -40,7 +40,7 @@ This install also downloads and compiles the latest cec-client that allows you t
 ## Usage ##
 - Set the URL for the display by adding it to a settings.data file...
 
-   `echo "URL=https://www.dogsbodytechnology.com/" > /home/pi/pi-display/settings.data`
+   `echo "URL=https://www.dogsbody.com/" > /home/pi/pi-display/settings.data`
 
 - To reload the URL or restart the displayboard due to a crash just kill Chromium
 
