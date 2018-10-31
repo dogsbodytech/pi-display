@@ -27,7 +27,7 @@ while true; do
   matchbox-window-manager -use_titlebar no -use_cursor no &
 
   # Start the browser
-  URL="https://www.dogsbodytechnology.com/" # In case the settings file doesn't exist
+  URL="https://www.dogsbody.com/" # In case the settings file doesn't exist
   test -f /home/pi/pi-display/settings.data && . /home/pi/pi-display/settings.data
   chromium-browser -app="${URL}"
 done;
