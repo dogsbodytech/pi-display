@@ -1,14 +1,14 @@
-# Create a Raspberry Pi Display on Raspbian Debian using Jessie and the Chromium browser
+# Create a Raspberry Pi Display on Raspbian Debian using Buster and the Chromium browser
 
-We use this for [our office Warboard](https://www.dogsbody.com/blog/the-warboard/) which is not only locked down to certain IP addresses but also uses the latest SSL protocols and ciphers.  The stock chromium on Raspberry Pi wasn't up to date (v22 when the current version is v51) and didn't support the latest security protocols.
+We use this for [our office Warboard](https://www.dogsbody.com/blog/the-warboard/) which is not only locked down to certain IP addresses but also uses the latest SSL protocols and ciphers. 
 
-This repo used to use the epiphany browser instead which was more up to date (but not as stable).  Now (28 Sep 2016) the Raspberry Pi team have [released PIXEL](https://www.raspberrypi.org/blog/introducing-pixel/) which includes a *much* more up to date version of the Chromium browser
+This install also downloads and compiles the latest [cec-client](https://github.com/Pulse-Eight/libcec) that allows you to turn the TV on and off each day via cron.
 
-This install also downloads and compiles the latest cec-client that allows you to turn the TV on and off each day via cron.
+This repo used to use the epiphany browser as the stock chromium on Raspbian wasn't up to date and didn't used to support the latest security protocols.  Now the Raspberry Pi team have [released PIXEL](https://www.raspberrypi.org/blog/introducing-pixel/) which includes a *much* more up to date version of the Chromium browser so we have returned to that.
 
 ## Installation ##
 
-1. Install the latest Raspbian Debian Jessie Lite (Last tested with 2016-11-25-raspbian-jessie-lite.zip)
+1. Install the latest Raspbian Debian Buster Lite (Last tested with 2019-09-26-raspbian-buster-lite.zip)
 
    You can always grab the latest from  https://downloads.raspberrypi.org/raspbian_lite_latest
 
@@ -20,8 +20,9 @@ This install also downloads and compiles the latest cec-client that allows you t
 
 3. Run `sudo raspi-config` and...
    - Change User Password
-   - Internationalisation Options - Change Timezone - Europe - London
-   - Advanced Options - Hostname - displayboard
+   - Localisation Options - Change Timezone - Europe - London
+   - Network Options - Hostname - displayboard
+   - Boot Options - Wait for Network at Boot - Yes
    - Advanced Options - Memory Split - 256
    - Finish - No Reboot
 
@@ -44,7 +45,7 @@ This install also downloads and compiles the latest cec-client that allows you t
 
 - To reload the URL or restart the displayboard due to a crash just kill Chromium
 
-   `killall -TERM  chromium-browser`
+   `pkill -TERM  chromium`
 
 - Setup cron job to turn the TV on and off each day. There us an example in the cron.example file.
 
