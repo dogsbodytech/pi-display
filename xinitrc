@@ -29,5 +29,5 @@ while true; do
   # Start the browser
   URL="https://www.dogsbody.com/" # In case the settings file doesn't exist
   test -f /home/pi/pi-display/settings.data && . /home/pi/pi-display/settings.data
-  chromium-browser -app="${URL}"
+  chromium-browser --check-for-update-interval=31536000 -app="${URL}"
 done;
