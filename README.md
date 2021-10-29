@@ -51,9 +51,6 @@ This repo used to use the epiphany browser as the stock chromium on Raspbian was
 
    `sudo cp /home/pi/pi-display/cron.example /etc/cron.d/displayboard`
 
-## ToDo ##
-- It would be great if we could get all the `raspi-config` commands into the `install.sh` script as then the installation could be one hit :-)
-
 ## Sources ##
 - http://blogs.wcode.org/2013/09/howto-boot-your-raspberry-pi-into-a-fullscreen-browser-kiosk/
 - https://www.danpurdy.co.uk/web-development/raspberry-pi-kiosk-screen-tutorial/
