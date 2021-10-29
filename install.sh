@@ -10,8 +10,23 @@ then
     exit 1
 fi
 
+echo "Changing default password"
+passwd
+
+# Set the timezone
+dpkg-reconfigure tzdata
+
+# Set Hostname to displayboard
+raspi-config nonint do_hostname "displayboard"
+
+#  Wait for Network at Boot
+raspi-config nonint do_boot_wait 1
+
 # Disable Overscan
 raspi-config nonint do_overscan 1
+
+# Give the GPU the most memory possible (256MB)
+raspi-config nonint do_memory_split 256
 
 # Install the bits we need
 apt install -y matchbox x11-xserver-utils xwit xinit ttf-mscorefonts-installer rpi-chromium-mods unattended-upgrades vim
