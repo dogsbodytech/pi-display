@@ -5,36 +5,12 @@
 # This script is executed at the end of each multiuser runlevel.
 # Make sure that the script will "exit 0" on success or any other
 # value on error.
-#
-# In order to enable or disable this script just change the execution
-# bits.
-#
-# By default this script does nothing.
 
 # Print the IP address
 _IP=$(hostname -I) || true
 if [ "$_IP" ]; then
   printf "My IP address is %s\n" "$_IP"
 fi
-
-# Wait for the TV-screen to be turned on...
-while ! $( tvservice --dumpedid /tmp/edid | fgrep -qv 'Nothing written!' ); do
-  bHadToWaitForScreen=true;
-  printf "===> Screen is not connected, off or in an unknown mode, waiting for it to become available...\n"
-  sleep 10;
-done;
-
-printf "===> Screen is on, extracting preferred mode...\n"
-_DEPTH=32;
-eval $( edidparser /tmp/edid | fgrep 'preferred mode' | tail -1 | sed -Ene 's/^.+(DMT|CEA) \(([0-9]+)\) ([0-9]+)x([0-9]+)[pi]? @.+/_GROUP=\1;_MODE=\2;_XRES=\3;_YRES=\4;/p' );
-
-printf "===> Resetting screen to preferred mode: %s-%d (%dx%dx%d)...\n" $_GROUP $_MODE $_XRES $_YRES $_DEPTH
-tvservice --explicit="$_GROUP $_MODE"
-sleep 1;
-
-printf "===> Resetting frame-buffer to %dx%dx%d...\n" $_XRES $_YRES $_DEPTH
-fbset --all --geometry $_XRES $_YRES $_XRES $_YRES $_DEPTH -left 0 -right 0 -upper 0 -lower 0;
-sleep 1;
 
 # Workaround for https://bugs.launchpad.net/ubuntu/+source/xinit/+bug/1562219
 chmod 0666 /dev/tty*
