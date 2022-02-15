@@ -31,7 +31,7 @@ raspi-config nonint do_overscan 1
 raspi-config nonint do_memory_split 256
 
 # Install the bits we need
-apt install -y matchbox x11-xserver-utils xwit xinit ttf-mscorefonts-installer rpi-chromium-mods unattended-upgrades vim
+apt install -y matchbox x11-xserver-utils xwit xinit ttf-mscorefonts-installer unattended-upgrades vim firefox-esr
 
 # Setup rc.local
 cp $SCRIPTDIR/src/rc.local /etc/rc.local
@@ -52,19 +52,18 @@ cp $SCRIPTDIR/src/20auto-upgrades /etc/apt/apt.conf.d/20auto-upgrades
 apt install -y cmake libudev-dev libxrandr-dev python-dev swig
 
 TEMPDIR=$(mktemp -d)
-sudo -u pi git clone https://github.com/Pulse-Eight/platform.git "$TEMPDIR"
-cd "$TEMPDIR"
+
+sudo -u pi git clone https://github.com/Pulse-Eight/platform.git "$TEMPDIR/platform"
+cd "$TEMPDIR/platform"
 sudo -u pi cmake .
 sudo -u pi make
 make install
-rm -rf "$TEMPDIR"
 
-TEMPDIR=$(mktemp -d)
-sudo -u pi git clone https://github.com/Pulse-Eight/libcec.git "$TEMPDIR"
-cd "$TEMPDIR"
+sudo -u pi git clone https://github.com/Pulse-Eight/libcec.git "$TEMPDIR/libcec"
+cd "$TEMPDIR/libcec"
 sudo -u pi cmake -DRPI_INCLUDE_DIR=/opt/vc/include -DRPI_LIB_DIR=/opt/vc/lib .
 sudo -u pi make -j4
 make install
 ldconfig
-rm -rf "$TEMPDIR"
 
+rm -rf "$TEMPDIR"
