@@ -53,16 +53,16 @@ apt install -y cmake libudev-dev libxrandr-dev python-dev swig
 
 TEMPDIR=$(mktemp -d)
 
-sudo -u pi git clone https://github.com/Pulse-Eight/platform.git "$TEMPDIR/platform"
+git clone https://github.com/Pulse-Eight/platform.git "$TEMPDIR/platform"
 cd "$TEMPDIR/platform"
-sudo -u pi cmake .
-sudo -u pi make
+cmake .
+make
 make install
 
-sudo -u pi git clone https://github.com/Pulse-Eight/libcec.git "$TEMPDIR/libcec"
+git clone https://github.com/Pulse-Eight/libcec.git "$TEMPDIR/libcec"
 cd "$TEMPDIR/libcec"
-sudo -u pi cmake -DRPI_INCLUDE_DIR=/opt/vc/include -DRPI_LIB_DIR=/opt/vc/lib .
-sudo -u pi make -j4
+cmake -DRPI_INCLUDE_DIR=/opt/vc/include -DRPI_LIB_DIR=/opt/vc/lib .
+make -j4
 make install
 ldconfig
 
