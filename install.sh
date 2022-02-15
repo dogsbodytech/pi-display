@@ -13,7 +13,7 @@ fi
 SCRIPTDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
 echo "Changing default password"
-passwd
+passwd pi
 
 # Set the timezone
 dpkg-reconfigure tzdata
