@@ -31,7 +31,7 @@ raspi-config nonint do_overscan 1
 raspi-config nonint do_memory_split 256
 
 # Install the bits we need
-apt install -y matchbox x11-xserver-utils xwit xinit ttf-mscorefonts-installer unattended-upgrades vim firefox-esr
+apt install -y matchbox x11-xserver-utils xinit ttf-mscorefonts-installer unattended-upgrades vim unclutter firefox-esr
 
 # Setup rc.local
 cp $SCRIPTDIR/src/rc.local /etc/rc.local
