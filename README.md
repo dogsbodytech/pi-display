@@ -2,7 +2,7 @@
 
 We use this for [our office Warboard](https://www.dogsbody.com/blog/the-warboard/) which is not only locked down to certain IP addresses but also uses the latest SSL protocols and ciphers. 
 
-This install also downloads and compiles the latest [cec-client](https://github.com/Pulse-Eight/libcec) that allows you to turn the TV on and off each day via cron.
+This install also installs cec-client that allows you to turn the TV on and off each day via cron.
 
 Over the years we have tried many browsers but is currently FireFox (See [#History](#History))
 
@@ -51,6 +51,8 @@ This project started by using the epiphany browser. We chose this as the version
 The Raspberry Pi team then [released PIXEL](https://www.raspberrypi.org/blog/introducing-pixel/) which included a much more up to date version of the Chromium browser however a few years later we noticed the display flashing as the page loads.
 
 We are now using the latest version of Firefox which has fixed both of these issues perfectly.
+
+We also used to download and compile the latest version of [cec-client](https://github.com/Pulse-Eight/libcec) however the modern that come with the OS now work great.
 
 ## Sources ##
 - http://blogs.wcode.org/2013/09/howto-boot-your-raspberry-pi-into-a-fullscreen-browser-kiosk/
