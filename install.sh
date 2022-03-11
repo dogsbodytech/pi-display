@@ -49,7 +49,7 @@ cp $SCRIPTDIR/src/20auto-upgrades /etc/apt/apt.conf.d/20auto-upgrades
 # Download and copile the latest cec-client so we can turn the TV on and off via cron
 # echo "on 0" | /usr/local/bin/cec-client -s
 # echo "standby 0" | /usr/local/bin/cec-client -s
-apt install -y cmake libudev-dev libxrandr-dev python-dev swig
+apt install -y cmake libudev-dev libxrandr-dev python3-dev swig git
 
 TEMPDIR=$(mktemp -d)
 
@@ -61,7 +61,7 @@ make install
 
 git clone https://github.com/Pulse-Eight/libcec.git "$TEMPDIR/libcec"
 cd "$TEMPDIR/libcec"
-cmake -DRPI_INCLUDE_DIR=/opt/vc/include -DRPI_LIB_DIR=/opt/vc/lib .
+cmake -DHAVE_LINUX_API=1 -DHAVE_RPI_API=0 -DRPI_INCLUDE_DIR=/opt/vc/include -DRPI_LIB_DIR=/opt/vc/lib .
 make -j4
 make install
 ldconfig
